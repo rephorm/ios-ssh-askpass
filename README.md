@@ -3,6 +3,9 @@ ios-ssh-askpass
 
 An iOS version of ssh-askpass.
 
+Usage
+-----
+
 Requirements:
 
   * `ssh-agent` must be running
@@ -10,10 +13,10 @@ Requirements:
   * `DISPLAY` must be set (to any value)
   * Either:
    - /usr/libexec/ssh-askpass must be linked to ios-ssh-askpass OR
-   - `SSH_ASKPASS` is set to the fullpath of `ios-ssh-askpass`
-  * `ssh-add` is run without a tty (or with stdin redirected to `/dev/null`)
+   - `SSH_ASKPASS` must be set to the fullpath of `ios-ssh-askpass`
+  * `ssh-add` must be run without a tty (or with stdin redirected to `/dev/null`)
 
-When the above requirements are met, the passphrase is requested from the user by displaying a modal alert. If it is incorrectly entered, the user is given a second chance.
+When the above requirements are met, the passphrase is requested from the user by displaying a modal alert. If it is incorrectly entered, the user is given a second chance. After a second failure, ssh-add exits with an error code.
 
 Detecting an existing ssh-agent
 -------------------------------
