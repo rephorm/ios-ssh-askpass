@@ -8,12 +8,9 @@ Requirements:
   * `ssh-agent` must be running
   * `SSH_AUTH_SOCK` must be set to the ssh agent's socket
   * `DISPLAY` must be set (to any value)
-
   * Either:
-
    - /usr/libexec/ssh-askpass must be linked to ios-ssh-askpass OR
    - `SSH_ASKPASS` is set to the fullpath of `ios-ssh-askpass`
-
   * `ssh-add` is run without a tty (or with stdin redirected to `/dev/null`)
 
 When the above requirements are met, the passphrase is requested from the user by displaying a modal alert. If it is incorrectly entered, the user is given a second chance.
