@@ -1,0 +1,10 @@
+Package: com.rephorm.ios-ssh-askpass
+Name: ios-ssh-askpass
+Depends: 
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: ssh-askpass for iOS
+Maintainer: rephorm
+Author: rephorm
+Section: System
+Tag: role::hacker
