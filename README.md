@@ -18,6 +18,33 @@ Requirements:
 
 When the above requirements are met, the passphrase is requested from the user by displaying a modal alert. If it is incorrectly entered, the user is given a second chance. After a second failure, ssh-add exits with an error code.
 
+Testing out ios-ssh-askpass
+---------------------------
+
+1) Compile ios-ssh-askpass
+
+    $ make
+
+2) Install the executable
+
+    # cp ios-ssh-askpass /usr/libexec
+    # cd /usr/libexec
+    # ln -s ios-ssh-askpass ssh-askpass
+
+3) Start an ssh-agent
+
+    $ eval `ssh-agent`
+
+4) Test out ssh-add
+
+        $ DISPLAY=1 ssh-add </dev/null
+
+    A window should pop up requesting your passphrase.
+
+5) Check that the passphrase was stored in the agent
+
+    $ ssh-add -l
+
 Detecting an existing ssh-agent
 -------------------------------
 
